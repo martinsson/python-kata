@@ -1,0 +1,4 @@
+.cache/
+.project
+.pydevproject
+**/__pycache__/**

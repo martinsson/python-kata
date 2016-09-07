@@ -17,6 +17,10 @@ class Primes(object):
         '''
     
     def factorsOf(self, number):
-        return []
+        if (number < 2):
+            return []
+        else:
+            return [number]
+        
     
         

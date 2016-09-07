@@ -10,9 +10,13 @@ class Primes(object):
     '''
 
 
-    def __init__(self, params):
+    def __init__(self):
         '''
         Constructor
         
         '''
+    
+    def factorsOf(self, number):
+        return []
+    
         

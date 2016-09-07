@@ -6,7 +6,8 @@ def func(number):
 
 
 def test_returns_empty_list_for_numbers_below_2():
-    assert func(3) == 4
+    primes = Primes()
+    assert primes.factorsOf(1) == []
 
 
 

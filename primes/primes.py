@@ -33,10 +33,13 @@ class Primes(object):
         potentialPrime = 2
         number = self.addOccurencesOfPotentialPrime(number, result, potentialPrime)
         
-        potentialPrime = 3
+        potentialPrime += 1
         number = self.addOccurencesOfPotentialPrime(number, result, potentialPrime)
         
-        potentialPrime = 5
+        potentialPrime += 1
+        number = self.addOccurencesOfPotentialPrime(number, result, potentialPrime)
+                
+        potentialPrime += 1
         number = self.addOccurencesOfPotentialPrime(number, result, potentialPrime)
                 
         result.append(number)

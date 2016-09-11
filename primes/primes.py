@@ -19,7 +19,7 @@ class Primes(object):
 
 
     def addOccurencesOfPotentialPrime(self, number, result, potentialPrime):
-        while number % potentialPrime == 0 and number > potentialPrime:
+        while number % potentialPrime == 0 and number >= potentialPrime:
             result.append(potentialPrime)
             number = number / potentialPrime
         
@@ -27,10 +27,9 @@ class Primes(object):
 
     def factorsOf(self, number):
         result = []
-        if (number < 2):
-            return result
             
-        potentialPrime = 2
+        smallestPrime = 2
+        potentialPrime = smallestPrime
         number = self.addOccurencesOfPotentialPrime(number, result, potentialPrime)
         
         potentialPrime += 1
@@ -42,7 +41,9 @@ class Primes(object):
         potentialPrime += 1
         number = self.addOccurencesOfPotentialPrime(number, result, potentialPrime)
                 
-        result.append(number)
+        if (number > smallestPrime):
+            prime = number
+            result.append(prime)
         return result
     
     

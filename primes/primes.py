@@ -29,17 +29,8 @@ class Primes(object):
         result = []
             
         smallestPrime = 2
-        potentialPrime = smallestPrime
-        number = self.addOccurencesOfPotentialPrime(number, result, potentialPrime)
-        
-        potentialPrime += 1
-        number = self.addOccurencesOfPotentialPrime(number, result, potentialPrime)
-        
-        potentialPrime += 1
-        number = self.addOccurencesOfPotentialPrime(number, result, potentialPrime)
-                
-        potentialPrime += 1
-        number = self.addOccurencesOfPotentialPrime(number, result, potentialPrime)
+        for potentialPrime in range(smallestPrime, number+1):
+            number = self.addOccurencesOfPotentialPrime(number, result, potentialPrime)
                 
         if (number > smallestPrime):
             prime = number

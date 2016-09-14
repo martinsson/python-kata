@@ -5,6 +5,7 @@ Created on Aug 31, 2016
 '''
 
 class Primes(object):
+    smallestPrime = 2
     '''
     classdocs
     '''
@@ -18,8 +19,12 @@ class Primes(object):
     
 
 
+
+    def isDivisibleBy(self, number, potentialPrime):
+        return number % potentialPrime == 0
+
     def addOccurencesOfPotentialPrime(self, number, result, potentialPrime):
-        while number % potentialPrime == 0 and number >= potentialPrime:
+        while self.isDivisibleBy(number, potentialPrime) and number >= self.smallestPrime:
             result.append(potentialPrime)
             number = number / potentialPrime
         
@@ -28,13 +33,13 @@ class Primes(object):
     def factorsOf(self, number):
         result = []
             
-        smallestPrime = 2
-        for potentialPrime in range(smallestPrime, number+1):
+        for potentialPrime in range(self.smallestPrime, number+1):
             number = self.addOccurencesOfPotentialPrime(number, result, potentialPrime)
                 
-        if (number > smallestPrime):
+        if (number > self.smallestPrime):
             prime = number
             result.append(prime)
+            
         return result
     
     

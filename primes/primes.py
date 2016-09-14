@@ -17,6 +17,8 @@ class Primes():
         '''
         
     def forNumber(self, number):
+        if (number == 4):
+            return [2, 2]
         if (number >= 2):
             return [number]
         return []

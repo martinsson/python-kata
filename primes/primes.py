@@ -18,6 +18,19 @@ class Primes():
         
 
 
+    def forNumber(self, number):
+        if (number < 2):
+            return []
+        
+        factors = []         
+        potentialPrime = 2
+        while (potentialPrime <= number):
+            number = self.appendFactorsOf(number, factors, potentialPrime)
+            potentialPrime+=1
+            
+                        
+        return factors
+
     def isDivisibleBy(self, number, potentialPrime):
         return number % potentialPrime == 0
 
@@ -27,19 +40,3 @@ class Primes():
             number = number / potentialPrime
         
         return number
-
-    def forNumber(self, number):
-        if (number < 2):
-            return []
-        
-        factors = []         
-        potentialPrime = 2
-        number = self.appendFactorsOf(number, factors, potentialPrime)
-
-        potentialPrime = 3
-        while (potentialPrime <= number):
-            number = self.appendFactorsOf(number, factors, potentialPrime)
-            potentialPrime+=2
-            
-                        
-        return factors

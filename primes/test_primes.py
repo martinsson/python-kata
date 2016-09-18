@@ -21,6 +21,7 @@ def test_for_a_multiple_n_of_prime_returns_list_of_n_prime():
     assert primesFor(4)== [2, 2]
     assert primesFor(9) == [3, 3]
     assert primesFor(125) == [5, 5, 5]
+    assert primesFor(49) == [7,7]
 
 
 

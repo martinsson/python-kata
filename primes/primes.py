@@ -30,10 +30,11 @@ class Primes():
         
         potentialPrime = 2
         number = self.appendFactorsOf(number, factors, potentialPrime)
-        potentialPrime+=1
-        number = self.appendFactorsOf(number, factors, potentialPrime)
-        potentialPrime+=1
-        potentialPrime+=1
-        number = self.appendFactorsOf(number, factors, potentialPrime)
+
+        potentialPrime = 3
+        while (potentialPrime <= number):
+            number = self.appendFactorsOf(number, factors, potentialPrime)
+            potentialPrime+=2
             
+                        
         return factors

@@ -17,8 +17,19 @@ class Primes():
         '''
         
     def forNumber(self, number):
-        if (number == 4):
-            return [2, 2]
-        if (number >= 2):
-            return [number]
-        return []
+        factors = [] 
+        
+        if ( number >= 2):
+            while (number % 2 == 0 and number >= 2):
+                factors.append(2)
+                number = number / 2
+                
+        if ( number >= 3):
+            while (number % 3 == 0 and number >= 3):
+                factors.append(3)
+                number = number / 3
+        
+        if (number > 2):
+            factors.append(number)
+            
+        return factors

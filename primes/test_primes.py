@@ -4,7 +4,7 @@ from primes import Primes
 def primesFor(number):
     return Primes().forNumber(number)
 
-def commented_test_acceptance():
+def test_acceptance():
     assert primesFor(2 * 3 * 5 * 7 * 19 * 19) == [2, 3, 5, 7, 19, 19]
 
 def test_returns_empty_list_for_numbers_below_2():

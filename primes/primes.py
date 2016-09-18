@@ -17,17 +17,22 @@ class Primes():
         '''
         
 
+
+    def isDivisibleBy(self, number, potentialPrime):
+        return number % potentialPrime == 0
+
     def appendFactorsOf(self, number, factors, potentialPrime):
-        if (number >= potentialPrime):
-            while number % potentialPrime == 0 and number >= potentialPrime:
-                factors.append(potentialPrime)
-                number = number / potentialPrime
+        while self.isDivisibleBy(number, potentialPrime) and number > 1:
+            factors.append(potentialPrime)
+            number = number / potentialPrime
         
         return number
 
     def forNumber(self, number):
-        factors = [] 
+        if (number < 2):
+            return []
         
+        factors = []         
         potentialPrime = 2
         number = self.appendFactorsOf(number, factors, potentialPrime)
 

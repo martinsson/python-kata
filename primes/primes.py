@@ -16,20 +16,24 @@ class Primes():
         
         '''
         
+
+    def appendFactorsOf(self, number, factors, potentialPrime):
+        if (number >= potentialPrime):
+            while number % potentialPrime == 0 and number >= potentialPrime:
+                factors.append(potentialPrime)
+                number = number / potentialPrime
+        
+        return number
+
     def forNumber(self, number):
         factors = [] 
         
-        if ( number >= 2):
-            while (number % 2 == 0 and number >= 2):
-                factors.append(2)
-                number = number / 2
-                
-        if ( number >= 3):
-            while (number % 3 == 0 and number >= 3):
-                factors.append(3)
-                number = number / 3
-        
-        if (number > 2):
-            factors.append(number)
+        potentialPrime = 2
+        number = self.appendFactorsOf(number, factors, potentialPrime)
+        potentialPrime+=1
+        number = self.appendFactorsOf(number, factors, potentialPrime)
+        potentialPrime+=1
+        potentialPrime+=1
+        number = self.appendFactorsOf(number, factors, potentialPrime)
             
         return factors

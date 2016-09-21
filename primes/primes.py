@@ -27,8 +27,7 @@ class Primes():
         while (potentialPrime <= number):
             number = self.appendFactorsOf(number, factors, potentialPrime)
             potentialPrime+=1
-            
-                        
+                                    
         return factors
 
     def isDivisibleBy(self, number, potentialPrime):

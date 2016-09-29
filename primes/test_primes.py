@@ -1,5 +1,4 @@
 
-from .primes import Primes
 
 def func(number):
     return number + 1
